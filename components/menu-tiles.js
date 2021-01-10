@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   textl2: {
     fontSize: 20,
     color: '#ffffff',
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: 'OpenSans-Light',
   },
 });
 

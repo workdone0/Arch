@@ -5,7 +5,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Login from './screens/Login';
 import Home from './screens/Home';
-
+import Billing from './screens/Billing';
+import OutletView from './screens/OutletView';
 const Stack = createStackNavigator();
 
 class App extends Component {
@@ -15,12 +16,13 @@ class App extends Component {
         <Stack.Navigator
           initialRouteName="home"
           screenOptions={{
-            headerStyle: {backgroundColor: '#212529'},
+            headerStyle: {backgroundColor: '#212529', elevation: 5},
             headerTitleStyle: {
               color: '#ffffff',
-              fontSize: 35,
+              fontSize: 30,
               fontFamily: 'OpenSans-Regular',
             },
+            headerTintColor: '#ffffff',
           }}>
           <Stack.Screen
             name="login"
@@ -30,7 +32,17 @@ class App extends Component {
           <Stack.Screen
             name="home"
             component={Home}
-            options={{headerShown: false}}
+            options={{title: 'Hi Shubham'}}
+          />
+          <Stack.Screen
+            name="billing"
+            component={Billing}
+            options={{title: 'Billing'}}
+          />
+          <Stack.Screen
+            name="outletview"
+            component={OutletView}
+            options={{title: ''}}
           />
         </Stack.Navigator>
       </NavigationContainer>
