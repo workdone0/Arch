@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import {Button} from 'react-native-elements';
 import InvoiceView from '../components/invoice-view';
 class OutletView extends Component {
@@ -8,6 +8,9 @@ class OutletView extends Component {
       title: 'Ambika Store',
     });
   }
+  billingClicked = () => {
+    this.props.navigation.navigate('invoice');
+  };
   render() {
     return (
       <View style={styles.mainView}>
@@ -19,6 +22,7 @@ class OutletView extends Component {
         </ScrollView>
         <Button
           style={{marginBottom: 0}}
+          onPress={this.billingClicked}
           buttonStyle={{backgroundColor: '#f05454', height: 50}}
           title="Add Invoice"
         />

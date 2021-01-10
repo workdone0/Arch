@@ -7,6 +7,7 @@ import Login from './screens/Login';
 import Home from './screens/Home';
 import Billing from './screens/Billing';
 import OutletView from './screens/OutletView';
+import Invoice from './screens/Invoice';
 const Stack = createStackNavigator();
 
 class App extends Component {
@@ -43,6 +44,11 @@ class App extends Component {
             name="outletview"
             component={OutletView}
             options={{title: ''}}
+          />
+          <Stack.Screen
+            name="invoice"
+            component={Invoice}
+            options={{title: 'Invoicing'}}
           />
         </Stack.Navigator>
       </NavigationContainer>
