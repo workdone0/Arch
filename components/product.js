@@ -10,7 +10,7 @@ class Product extends Component {
           <Text
             style={{
               fontSize: 30,
-              fontFamily: 'OpenSans-Bold',
+              fontFamily: 'OpenSans-Light',
               color: '#ffffff',
             }}>
             H. Neem Face Wash
@@ -21,11 +21,21 @@ class Product extends Component {
             style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Text
               style={{
-                fontSize: 25,
+                fontSize: 20,
+                fontFamily: 'OpenSans-Light',
+                color: '#ffffff',
+                marginBottom: 10,
+              }}>
+              MRP: ₹100
+            </Text>
+            <Text
+              style={{
+                fontSize: 20,
+                backgroundColor: '#f05454',
                 fontFamily: 'OpenSans-Light',
                 color: '#ffffff',
               }}>
-              Price: $100
+              In Stock: 52
             </Text>
           </View>
           <View
@@ -33,6 +43,7 @@ class Product extends Component {
             <Input
               label="Quantity"
               inputStyle={{color: '#ffffff', fontSize: 25}}
+              keyboardType="phone-pad"
             />
           </View>
         </View>

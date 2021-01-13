@@ -15,6 +15,7 @@ class PaymentRow extends Component {
           <Input
             placeholder="Enter Payment Amount"
             inputStyle={{color: '#ffffff'}}
+            keyboardType="phone-pad"
           />
         </View>
         <View

@@ -18,11 +18,11 @@ class InvoiceView extends Component {
           </View>
           <View style={styles.aView}>
             <Text style={styles.textR2}>Amount</Text>
-            <Text style={styles.textR2}>120000</Text>
+            <Text style={styles.textR2}>₹ 120000</Text>
           </View>
           <View style={styles.pView}>
             <Text style={styles.textR2}>Already Paid</Text>
-            <Text style={styles.textR2}>65000</Text>
+            <Text style={styles.textR2}>₹ 65000</Text>
           </View>
         </View>
         <PaymentRow />
