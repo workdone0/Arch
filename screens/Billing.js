@@ -48,9 +48,10 @@ class Billing extends Component {
             this.state.shops.map((shop) => {
               return (
                 <TouchableOpacity
+                  key={shop._id}
                   onPress={() => this.shopClicked(shop)}
                   activeOpacity={0.8}>
-                  <ShopListItem key={shop._id} shop={shop} />
+                  <ShopListItem shop={shop} />
                 </TouchableOpacity>
               );
             })
