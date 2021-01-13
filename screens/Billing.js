@@ -5,14 +5,30 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
-import {Input} from 'react-native-elements';
+import {Input, ThemeConsumer} from 'react-native-elements';
 
 import ShopListItem from '../components/shop-list-item';
+import {shopList} from '../api/shops';
 
 class Billing extends Component {
-  shopClicked = () => {
-    this.props.navigation.navigate('outletview');
+  constructor(props) {
+    super(props);
+    this.state = {
+      shops: [],
+    };
+  }
+  async componentDidMount() {
+    const response = await shopList();
+    if (response.status === 200) {
+      this.setState({
+        shops: response.data.shops,
+      });
+    }
+  }
+  shopClicked = (shop) => {
+    this.props.navigation.navigate('outletview', {shop: shop});
   };
   render() {
     return (
@@ -28,17 +44,19 @@ class Billing extends Component {
           }}
         />
         <ScrollView>
-          <TouchableOpacity onPress={this.shopClicked}>
-            <ShopListItem />
-          </TouchableOpacity>
-          <ShopListItem />
-          <ShopListItem />
-          <ShopListItem />
-          <ShopListItem />
-          <ShopListItem />
-          <ShopListItem />
-          <ShopListItem />
-          <ShopListItem />
+          {this.state.shops.length > 0 ? (
+            this.state.shops.map((shop) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => this.shopClicked(shop)}
+                  activeOpacity={0.8}>
+                  <ShopListItem key={shop._id} shop={shop} />
+                </TouchableOpacity>
+              );
+            })
+          ) : (
+            <ActivityIndicator size="large" color="#ffffff" />
+          )}
         </ScrollView>
       </View>
     );

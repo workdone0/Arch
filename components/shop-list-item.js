@@ -8,14 +8,16 @@ class ShopListItem extends Component {
       //Row
       <View style={styles.mainRow}>
         <View style={styles.col1}>
-          <Text style={styles.typeText}>R</Text>
+          <Text style={styles.typeText}>
+            {this.props.shop.isGST ? 'T' : 'R'}
+          </Text>
         </View>
         <View style={styles.col2}>
           <View>
-            <Text style={styles.nameText}>Ambika Store</Text>
+            <Text style={styles.nameText}>{this.props.shop.name}</Text>
           </View>
           <View>
-            <Text style={styles.addressText}>Gobarsahi</Text>
+            <Text style={styles.addressText}>{this.props.shop.address}</Text>
           </View>
         </View>
         <View style={styles.col3}>

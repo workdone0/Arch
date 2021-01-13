@@ -19,7 +19,7 @@ class Login extends Component {
           <View style={styles.firstView}>
             <Text style={styles.textl1}>Let's sign you in.</Text>
             <Text style={styles.textl2}>Welcome back.</Text>
-            <Text style={styles.textl3}>You have been missed.</Text>
+            <Text style={styles.textl3}>Have a great day.</Text>
           </View>
           <View style={styles.secondView}>
             <Input

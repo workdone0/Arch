@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
-import {ScrollView, View, StyleSheet} from 'react-native';
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import {Input, Button} from 'react-native-elements';
 
 import Product from '../components/product';
@@ -35,6 +40,7 @@ class Invoice extends Component {
           onPress={this.confirmClicked}
           buttonStyle={{backgroundColor: '#f05454', height: 50}}
           title="Confirm"
+          TouchableComponent={TouchableWithoutFeedback}
         />
       </View>
     );

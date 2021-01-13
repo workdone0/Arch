@@ -1,11 +1,27 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import {Button} from 'react-native-elements';
 import InvoiceView from '../components/invoice-view';
 class OutletView extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shop: null,
+    };
+  }
+  async componentDidMount() {
     this.props.navigation.setOptions({
-      title: 'Ambika Store',
+      title: this.props.route.params.shop
+        ? this.props.route.params.shop.name
+        : '',
+    });
+    this.setState({
+      shop: await this.props.route.params.shop,
     });
   }
   billingClicked = () => {
@@ -24,6 +40,7 @@ class OutletView extends Component {
           style={{marginBottom: 0}}
           onPress={this.billingClicked}
           buttonStyle={{backgroundColor: '#f05454', height: 50}}
+          TouchableComponent={TouchableWithoutFeedback}
           title="Add Invoice"
         />
       </View>
